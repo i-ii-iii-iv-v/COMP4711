@@ -10,7 +10,8 @@
 		include('Student.php');
 
 		$students = array();
-
+		
+		//first student initialized
 		$first = new Student();
 		$first->surname = "Doe";
 		$first->first_name = "John";
@@ -20,7 +21,8 @@
 		$first->add_grade(75);
 		$first->add_grade(55);
 		$students['j123'] = $first;
-		
+	
+		//second student initialized
 		$second = new Student();
 		$second->surname = "Einstein";
 		$second->first_name = "Albert";
@@ -32,6 +34,21 @@
 		$second->add_grade(50);
 		$students['a456'] = $second;
 		
+		
+		//first student initialized
+		$third = new Student();
+		$third->surname = "You";
+		$third->first_name = "Alex";
+		$third->add_email('home','iiiiiiivv54321@gmail.com');
+		$third->add_grade(100);
+		$third->add_grade(100);
+		$third->add_grade(100);
+		$students['a999'] = $third;
+		
+		//sorts based on name
+		ksort($students);
+		
+		//prints student info
 		foreach($students as $student)
 			echo $student->toString();
 		?>
